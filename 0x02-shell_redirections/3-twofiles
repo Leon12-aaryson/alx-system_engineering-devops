@@ -1,2 +1,2 @@
--rw-r--r-- 1 root root  175 Jan 27 01:55 /etc/hosts
--rw-r--r-- 1 root root 1338 Mar 29  2022 /etc/passwd
+#!/bin/bash
+cat /etc/passwd /etc/hosts
