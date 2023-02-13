@@ -1,0 +1,2 @@
+#!/bin/bash
+find -c -i "bin" /etc/passwd
