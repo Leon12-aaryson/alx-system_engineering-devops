@@ -1,8 +1,6 @@
 #!/bin/bash
-clear
-ls
 chmod u+x *
 chmod u-x README.md
 git add .
-git commit -m "this ia my work"
+git commit -m "this is a commit for task 0x03 shell scripting"
 git push
