@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#prints listening portsin a server
 netstat -lp
