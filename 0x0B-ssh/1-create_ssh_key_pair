@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #generating an ssh key with specifig flags for each item required
 private_key="school"
 
