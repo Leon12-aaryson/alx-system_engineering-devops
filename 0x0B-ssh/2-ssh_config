@@ -1,0 +1,8 @@
+# ~/.ssh/config
+
+Host leon
+    HostName 100.25.201.247
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PreferredAuthentications publickey
+    PasswordAuthentication no

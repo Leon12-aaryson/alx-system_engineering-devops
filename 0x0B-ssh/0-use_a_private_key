@@ -1,0 +1,4 @@
+#!/bin/bash
+server_address="100.25.201.247"
+
+ssh -i ~/.ssh/school ubuntu@$server_address
