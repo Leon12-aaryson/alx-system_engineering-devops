@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this script is to configure nginx to run on port 80
+sudo apt update
+sudo apt install nginx -y
+sudo ufw allow 'Nginx HTTP'
+sed -i 's/8080/80/g' /etc/nginx/sites-available/default
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
