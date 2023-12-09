@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This commands display information about sub domains
+info_domain () {
+    answer=$(dig "$1" | grep -A1 'ANSWER SECTION' | tail -n 1)
+	sub_d=$(echo "$answer" | awk -F'.' '{print $1}')
+	record=$(echo "$answer" | awk '{print $4}')
+	destination=$(echo "$answer" | awk '{print $5}')
+	echo "The subdomain $sub_d is a $record record and points to $destination"
+}
+
+if [ $# -gt 1 ]; then
+	info_domain "$2.$1"
+elif [ $# -lt 2 ]; then
+    info_domain "www.$1"
+	info_domain "lb-01.$1"
+	info_domain "web-01.$1"
+	info_domain "web-02.$1"
+fi
+
