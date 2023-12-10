@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# this is to write to a file and configure
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" | tee /var/www/html/www/index.html
+sudo service nginx start
+
+# Configure Nginx to redirect traffic
+cat <<EOF | sudo tee /etc/nginx/sites-available/default > /dev/null
+server {
+    listen 80;
+
+    server_name _;
+
+    location / {
+        if (\$request_uri = "/redirect_me") {
+            return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+        root /var/www/html;
+        index index.html;
+    }
+}
+EOF
+
+# Restart Nginx
+sudo service restart nginx
