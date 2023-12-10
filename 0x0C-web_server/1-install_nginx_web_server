@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # This bash script is meant to install nginx to a remote server
-
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo 'Hello World!' | sudo tee /var/www/html/index.html
