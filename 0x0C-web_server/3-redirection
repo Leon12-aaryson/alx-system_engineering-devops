@@ -2,7 +2,7 @@
 # this is to write to a file and configure
 sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Hello World!" | tee /var/www/html/www/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 sudo service nginx start
 
 # Configure Nginx to redirect traffic
@@ -23,4 +23,4 @@ server {
 EOF
 
 # Restart Nginx
-sudo service restart nginx
+sudo systemctl restart nginx
