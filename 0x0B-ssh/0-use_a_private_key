@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #connecting to a remote server using single character flags
-ssh -i ~/.ssh/school ubuntu@100.25.201.247
+ssh -i ~/.ssh/school ubuntu@54.146.11.22
