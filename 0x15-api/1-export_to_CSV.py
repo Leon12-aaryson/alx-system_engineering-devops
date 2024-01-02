@@ -40,9 +40,6 @@ def get_employee_todo_progress(employee_id):
                         todo['completed'] else "Not Completed",
                         "TASK_TITLE": todo['title']
                     })
-
-                """print(f"CSV file '{filename}' has been
-                created successfully.")"""
         else:
             print(f"Error: Unable to fetch user information for employee ID "
                   f"{employee_id}")

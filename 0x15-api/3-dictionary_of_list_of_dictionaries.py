@@ -48,7 +48,6 @@ def get_all_employees_todo_progress():
         with open(filename, mode='w') as json_file:
             json.dump(all_employees_todo, json_file, indent=2)
 
-        print(f"JSON file '{filename}' has been created successfully.")
     else:
         print("Error: Unable to fetch user information.")
 
