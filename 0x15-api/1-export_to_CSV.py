@@ -17,7 +17,7 @@ def get_employee_todo_progress(employee_id):
         todos = todos_response.json()
 
         user_url = f"https://jsonplaceholder.typicode.com/users/"\
-        f"{employee_id}"
+                   f"{employee_id}"
         user_response = requests.get(user_url)
 
         if user_response.status_code == 200:
@@ -44,7 +44,8 @@ def get_employee_todo_progress(employee_id):
                 """print(f"CSV file '{filename}' has been
                 created successfully.")"""
         else:
-            print(f"Error: Unable to fetch user information for employee ID {employee_id}")
+            print(f"Error: Unable to fetch user information for employee ID "
+                  f"{employee_id}")
     else:
         print(f"Error: Unable to fetch TODO list for employee ID"
               f"{employee_id}")
