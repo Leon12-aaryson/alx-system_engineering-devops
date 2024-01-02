@@ -23,7 +23,7 @@ def get_employee_todo_progress(employee_id):
             employee_name = user_data['name']
 
             employee_json = {
-                "USER_ID": [
+                str(employee_id): [
                     {
                         "task": todo['title'],
                         "completed": todo['completed'],
