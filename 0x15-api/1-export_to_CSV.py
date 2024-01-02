@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """This module is to export a csv file of the PAI data
 """
+import csv
 import requests
 import sys
-import csv
 
 
 def get_employee_todo_progress(employee_id):

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """The module below is to export json filesof API"""
+import json
 import requests
 import sys
-import json
 
 
 def get_employee_todo_progress(employee_id):

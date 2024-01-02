@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """The module is meant for dictionary"""
-import requests
 import json
+import requests
 
 
 def get_all_employees_todo_progress():
