@@ -43,8 +43,7 @@ def get_employee_todo_progress(employee_id):
             print(f"Error: Unable to fetch user information for employee ID "
                   f"{employee_id}")
     else:
-        print(f"Error: Unable to fetch TODO list for employee ID "
-              f"{employee_id}")
+        print(f"Error: Unable to fetch TODO list for employee ID {employee_id}")
 
 
 if __name__ == "__main__":

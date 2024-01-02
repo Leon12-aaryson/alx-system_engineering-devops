@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-this module is to export a csv file of the PAI data
+"""This module is to export a csv file of the PAI data
 """
 import requests
 import sys
@@ -17,8 +16,8 @@ def get_employee_todo_progress(employee_id):
     if todos_response.status_code == 200:
         todos = todos_response.json()
 
-        user_url = f"""https://jsonplaceholder.typicode.com/users/
-        {employee_id}"""
+        user_url = f"https://jsonplaceholder.typicode.com/users/"\
+        f"{employee_id}"
         user_response = requests.get(user_url)
 
         if user_response.status_code == 200:
@@ -45,11 +44,10 @@ def get_employee_todo_progress(employee_id):
                 """print(f"CSV file '{filename}' has been
                 created successfully.")"""
         else:
-            print(f"Error: Unable to fetch user information for employee ID
-                  {employee_id}")
+            print(f"Error: Unable to fetch user information for employee ID {employee_id}")
     else:
-        print(f"Error: Unable to fetch TODO list for employee ID
-              {employee_id}")
+        print(f"Error: Unable to fetch TODO list for employee ID"
+              f"{employee_id}")
 
 
 if __name__ == "__main__":
