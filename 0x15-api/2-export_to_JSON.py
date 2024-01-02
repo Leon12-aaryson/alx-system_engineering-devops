@@ -7,7 +7,8 @@ import json
 
 def get_employee_todo_progress(employee_id):
     """Define the API endpoint URL for TODOs"""
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = f"https://jsonplaceholder.typicode.com/"\
+                f"todos?userId={employee_id}"
 
     todos_response = requests.get(todos_url)
 
@@ -39,9 +40,11 @@ def get_employee_todo_progress(employee_id):
                 """print(f"JSON file '{filename}' has been created
                 successfully.")"""
         else:
-            print(f"Error: Unable to fetch user information for employee ID {employee_id}")
+            print(f"Error: Unable to fetch user information for employee ID "
+                  f"{employee_id}")
     else:
-        print(f"Error: Unable to fetch TODO list for employee ID {employee_id}")
+        print(f"Error: Unable to fetch TODO list for employee ID "
+              f"{employee_id}")
 
 
 if __name__ == "__main__":

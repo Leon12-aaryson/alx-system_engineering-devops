@@ -18,7 +18,8 @@ def get_all_employees_todo_progress():
         for user in users:
             user_id = user['id']
 
-            todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+            todos_url = f"https://jsonplaceholder.typicode.com/todos?"\
+                f"userId={user_id}"
 
             todos_response = requests.get(todos_url)
 
@@ -27,22 +28,27 @@ def get_all_employees_todo_progress():
 
                 todo_list = [
                     {
-                        "username": user['name'],
-                        "task": todo['title'],
-                        "completed": todo['completed']
+                        user_id: [
+                            {
+                                "username": user['username'],
+                                "task": todo['title'],
+                                "completed": todo['completed']
+                            }
+                        ]
                     }
                     for todo in todos
                 ]
 
-                all_employees_todo[user_id] = todo_list
+                all_employees_todo.update({user_id: todo_list})
             else:
-                print(f"Error: Unable to fetch TODO list for employee ID {user_id}")
+                print(f"Error: Unable to fetch TODO list for employee"
+                      f" ID {user_id}")
 
         filename = "todo_all_employees.json"
         with open(filename, mode='w') as json_file:
             json.dump(all_employees_todo, json_file, indent=2)
 
-            """print(f"JSON file '{filename}' has been created successfully.")"""
+        print(f"JSON file '{filename}' has been created successfully.")
     else:
         print("Error: Unable to fetch user information.")
 

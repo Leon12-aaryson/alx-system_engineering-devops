@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""this module is to export a csv file of the PAI data"""
+"""
+this module is to export a csv file of the PAI data
+"""
 import requests
 import sys
 import csv
@@ -7,7 +9,8 @@ import csv
 
 def get_employee_todo_progress(employee_id):
     """Define the API endpoint URL for TODOs"""
-    todos_url = f"https: //jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todos_url = f"https: //jsonplaceholder.typicode.com/todos?"\
+        f"userId={employee_id}"
 
     todos_response = requests.get(todos_url)
 
@@ -39,7 +42,7 @@ def get_employee_todo_progress(employee_id):
                         "TASK_TITLE": todo['title']
                     })
 
-                """print(f"CSV file '{filename}' has been 
+                """print(f"CSV file '{filename}' has been
                 created successfully.")"""
         else:
             print(f"Error: Unable to fetch user information for employee ID
