@@ -7,14 +7,15 @@ import sys
 def get_employee_todo_progress(employee_id):
     """Define the API endpoint URL for TODOs"""
     todos_url = f"https://jsonplaceholder.typicode.com/todos?"\
-        f"userId={employee_id}"
+                f"userId={employee_id}"
 
     todos_response = requests.get(todos_url)
 
     if todos_response.status_code == 200:
         todos = todos_response.json()
 
-        user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+        user_url = f"https://jsonplaceholder.typicode.com/users/"\
+            f"{employee_id}"
         user_response = requests.get(user_url)
 
         if user_response.status_code == 200:
@@ -26,11 +27,14 @@ def get_employee_todo_progress(employee_id):
             number_of_done_tasks = len(completed_tasks)
             total_number_of_tasks = len(todos)
 
+            print(f"Employee {employee_name} is done with tasks "
+                  f"({number_of_done_tasks}/{total_number_of_tasks}):")
+
             for task in completed_tasks:
                 print(f"\t{task['title']}")
         else:
-            print(f"Error: Unable to fetch user information for employee ID"
-                  f"{employee_id}")
+            print(f"Error: Unable to fetch user information for employee "
+                  f"ID {employee_id}")
     else:
         print(f"Error: Unable to fetch TODO list for employee ID "
               f"{employee_id}")
