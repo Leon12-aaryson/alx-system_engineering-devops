@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""The module is meant for dictionary"""
 import requests
 import json
 
