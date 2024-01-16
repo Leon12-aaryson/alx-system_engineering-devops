@@ -29,6 +29,7 @@ def recurse(subreddit, hot_list=None, after=None):
         print(f"Error: {response.status_code}")
         return None
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <subreddit_name>")
