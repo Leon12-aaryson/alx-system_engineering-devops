@@ -8,7 +8,7 @@ import sys
 
 def number_of_subscribers(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    
+
     headers = {'User-Agent': 'Custom User Agent'}
 
     response = requests.get(url, headers=headers)
@@ -22,6 +22,7 @@ def number_of_subscribers(subreddit):
         print(f"Error: {response.status_code}")
         return 0
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <subreddit_name>")
@@ -29,4 +30,5 @@ if __name__ == "__main__":
 
     subreddit_name = sys.argv[1]
     subscribers_count = number_of_subscribers(subreddit_name)
-    print(f"The number of subscribers in r/{subreddit_name} is: {subscribers_count}")
+    print(f"The number of subscribers in r/{subreddit_name} is:\
+          {subscribers_count}")
