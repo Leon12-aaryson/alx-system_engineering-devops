@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+this id to return titles 
+"""
 import requests
 import sys
 
